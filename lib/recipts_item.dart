@@ -11,12 +11,12 @@ class ReciptsItems extends StatelessWidget {
   final Affordability affordability;
 
   ReciptsItems(
-      {this.id,
-      this.title,
-      this.affordability,
-      this.complexity,
-      this.duration,
-      this.imageUrl});
+      {required this.id,
+      required this.title,
+      required this.affordability,
+      required this.complexity,
+      required this.duration,
+      required this.imageUrl});
 
 String get complexityText{
 

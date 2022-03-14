@@ -9,7 +9,7 @@ class CategoryDetails extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final routeArgs =
-    ModalRoute.of(context).settings.arguments as Map<String, String>;
+    ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
     final categoryId = routeArgs['id'];
     final filteredCat = DUMMY_RECIPTS.where((recipt) {
@@ -18,7 +18,7 @@ class CategoryDetails extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryTitle),
+        title: Text(categoryTitle!),
       ),
       body: ListView.builder(
         itemBuilder: (context,index){
@@ -27,7 +27,7 @@ class CategoryDetails extends StatelessWidget {
             imageUrl: filteredCat[index].imageUrl,
             duration: filteredCat[index].duration,
             complexity: filteredCat[index].complexity,
-            affordability: filteredCat[index].affordability,
+            affordability: filteredCat[index].affordability, id: '',
           );
         },
         itemCount: filteredCat.length,
